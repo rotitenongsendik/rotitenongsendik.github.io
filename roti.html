@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Roti Tenong — Web Store</title>
+  <meta name="description" content="Roti Tenong — Pilihan roti & pisang kekinian. Order via WhatsApp atau GoFood.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1:#FFDEE9; /* pink */
+      --bg2:#B5FFFC; /* aqua */
+      --card:#ffffff;
+      --accent:#6A00F4;
+      --muted:#6b7280;
+      --shadow: 0 8px 24px rgba(106,0,244,0.12);
+    }
+    *{box-sizing:border-box}
+    body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial; margin:0; background:linear-gradient(120deg,var(--bg1),var(--bg2)); color:#111}
+    .container{max-width:1100px;margin:28px auto;padding:20px}
+    header{display:flex;gap:18px;align-items:center}
+    .logo{display:flex;align-items:center;gap:12px}
+    .brand-circle{width:64px;height:64px;border-radius:14px;background:linear-gradient(135deg,#fff6, #fff3);display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow)}
+    .brand-circle img{width:48px;height:48px;object-fit:cover;border-radius:10px}
+    h1{font-size:26px;margin:0}
+    p.lead{margin:4px 0 0;color:var(--muted)}
+
+    .hero{margin-top:18px;background:rgba(255,255,255,0.6);border-radius:18px;padding:18px;display:flex;gap:18px;align-items:center;box-shadow:var(--shadow)}
+    .hero-left{flex:1}
+    .hero-right{width:220px}
+    .hero img{width:100%;height:150px;object-fit:cover;border-radius:12px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:12px;background:linear-gradient(90deg,var(--accent),#ff4da6);color:white;text-decoration:none;font-weight:700;box-shadow:0 6px 18px rgba(0,0,0,0.12)}
+
+    .shop-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:20px}
+    .card{background:var(--card);border-radius:14px;padding:12px;box-shadow:var(--shadow);overflow:hidden}
+    .card img{width:100%;height:140px;object-fit:cover;border-radius:10px}
+    .meta{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+    .title{font-weight:700}
+    .price{font-weight:800;color:var(--accent)}
+    .tag{font-size:12px;color:var(--muted)}
+    .actions{display:flex;gap:8px;margin-top:10px}
+    .small-btn{flex:1;padding:8px;border-radius:10px;text-align:center;text-decoration:none;font-weight:700}
+    .wa{background:#25D366;color:white}
+    .gofood{background:#FF3B30;color:white}
+
+    .section-title{margin:26px 0 10px;font-size:18px}
+    footer{margin-top:28px;padding:16px;border-radius:12px;background:rgba(255,255,255,0.6);display:flex;gap:16px;align-items:flex-start}
+    .profile{flex:1}
+    .map{width:320px;height:200px;border-radius:10px;overflow:hidden}
+
+    @media (max-width:720px){.hero{flex-direction:column}.hero-right{width:100%}.map{width:100%;height:220px}}
+    .badge{display:inline-block;padding:6px 8px;border-radius:999px;background:linear-gradient(90deg,#fff,#fff2);font-weight:700}
+    .price-old{color:#9ca3af;text-decoration:line-through;font-size:13px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <div class="brand-circle"><img src="https://source.unsplash.com/collection/190727/64x64" alt="logo"></div>
+        <div>
+          <h1>Roti Tenong</h1>
+          <p class="lead">Rasa kekinian — Buka setiap hari 17:00–23:00</p>
+        </div>
+      </div>
+      <div style="margin-left:auto;display:flex;gap:10px;align-items:center">
+        <a class="btn" href="https://wa.me/6282243421731?text=Halo%20Roti%20Tenong%20%F0%9F%8D%BA%20Saya%20ingin%20pesan" target="_blank">Pesan via WhatsApp</a>
+        <a class="btn" style="background:linear-gradient(90deg,#ffbe4d,#ff5ea6)" href="https://gofood.link/a/AxvoFXS" target="_blank">Order di GoFood</a>
+      </div>
+    </header>
+
+    <div class="hero">
+      <div class="hero-left">
+        <h2 style="margin:0">Menu Favorit — Ceria & Kekinian</h2>
+        <p style="margin:8px 0;color:var(--muted)">Pilihan roti tenong, pisang tenong, Pisang Crispy, dan paket spesial — cocok buat nongkrong dan oleh-oleh.</p>
+        <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap">
+          <span class="badge">Buka 17:00-23:00</span>
+          <span class="badge">Halte BRI Corporate University, Cupak Tangah</span>
+          <span class="badge">WA: 082243421731</span>
+        </div>
+      </div>
+      <div class="hero-right">
+        <img src="https://source.unsplash.com/featured/?bread,snack,banana" alt="Roti Tenong">
+      </div>
+    </div>
+
+    <!-- Product Sections Rendered by JS -->
+    <div id="products"></div>
+
+    <footer>
+      <div class="profile">
+        <h3 style="margin:0">Tentang Roti Tenong</h3>
+        <p style="margin:8px 0;color:var(--muted)">Alamat: Halte BRI Corporate University, Cupak Tangah, Kecamatan Pauh, Kota Padang.<br>Buka setiap hari 17:00–23:00. Kontak WhatsApp: <strong>082243421731</strong></p>
+        <p style="margin:8px 0">Order online via <a href="https://gofood.link/a/AxvoFXS" target="_blank">GoFood</a> atau klik tombol WhatsApp untuk pesan langsung.</p>
+      </div>
+      <div class="map">
+        <iframe
+          width="100%" height="100%" frameborder="0" style="border:0"
+          src="https://www.google.com/maps?q=Halte%20BRI%20Corporate%20University%2C%20Cupak%20Tangah%2C%20Kecamatan%20Pauh%2C%20Kota%20Padang&output=embed" allowfullscreen>
+        </iframe>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Product data
+    const shopPhone = '6282243421731'; // for wa.me links (country code)
+    const gofoodLink = 'https://gofood.link/a/AxvoFXS';
+
+    const products = [
+      // Roti Tenong
+      {category:'Roti Tenong',name:'Roti Tenong Mises Cokelat Keju',price:19500,img:'https://source.unsplash.com/featured/?chocolate,bread'},
+      {category:'Roti Tenong',name:'Roti Tenong Selai Cokelat Keju',price:22500,img:'https://source.unsplash.com/featured/?chocolate,spread'},
+      {category:'Roti Tenong',name:'Roti Tenong Selai Tiramisu Keju',price:22500,img:'https://source.unsplash.com/featured/?tiramisu,bread'},
+      {category:'Roti Tenong',name:'Roti Tenong Selai Tiramisu Kacang',price:22500,img:'https://source.unsplash.com/featured/?tiramisu,peanut'},
+      {category:'Roti Tenong',name:'Roti Tenong Mises Kacang',price:19500,img:'https://source.unsplash.com/featured/?peanut,butter'},
+      {category:'Roti Tenong',name:'Roti Tenong Selai Cokelat Kacang',price:22500,img:'https://source.unsplash.com/featured/?chocolate,peanut'},
+      // Pisang Tenong
+      {category:'Pisang Tenong',name:'Pisang Tenong Meses Keju',price:19500,img:'https://source.unsplash.com/featured/?banana,chocolate'},
+      {category:'Pisang Tenong',name:'Pisang Tenong Selai Cokelat Keju',price:22500,img:'https://source.unsplash.com/featured/?banana,chocolate,toast'},
+      {category:'Pisang Tenong',name:'Pisang Tenong Selai Tiramisu Keju',price:22500,img:'https://source.unsplash.com/featured/?banana,tiramisu'},
+      {category:'Pisang Tenong',name:'Pisang Tenong Selai Tiramisu Kacang',price:22500,img:'https://source.unsplash.com/featured/?banana,peanut'},
+      {category:'Pisang Tenong',name:'Pisang Tenong Mises Kacang',price:19500,img:'https://source.unsplash.com/featured/?banana,crispy'},
+      {category:'Pisang Tenong',name:'Pisang Tenong Selai Cokelat Kacang',price:22000,img:'https://source.unsplash.com/featured/?banana,chocolate,peanut'},
+      // Pisang Crispy
+      {category:'Pisang Crispy',name:'Pisang Crispy Selai Cokelat Keju',price:23500,img:'https://source.unsplash.com/featured/?crispy,banana,chocolate'},
+      {category:'Pisang Crispy',name:'Pisang Crispy Selai Tiramisu Keju',price:23000,img:'https://source.unsplash.com/featured/?crispy,tiramisu'},
+      {category:'Pisang Crispy',name:'Pisang Crispy Mises Keju',price:20500,img:'https://source.unsplash.com/featured/?crispy,banana'},
+      {category:'Pisang Crispy',name:'Pisang Crispy Selai Tiramisu Kacang',price:23500,img:'https://source.unsplash.com/featured/?crispy,peanut'},
+      {category:'Pisang Crispy',name:'Pisang Crispy Selai Cokelat Kacang',price:23500,img:'https://source.unsplash.com/featured/?crispy,chocolate,peanut'},
+      {category:'Pisang Crispy',name:'Pisang Crispy Mises Kacang',price:20500,img:'https://source.unsplash.com/featured/?crispy,mix'},
+      // Spesial Campur
+      {category:'Spesial Campur',name:'Campur Mises Keju (Roti+Pisang)',price:29000,img:'https://source.unsplash.com/featured/?mix,snack'},
+      {category:'Spesial Campur',name:'Campur Selai Cokelat Keju (Roti+Pisang)',price:31000,img:'https://source.unsplash.com/featured/?mix,chocolate'},
+      {category:'Spesial Campur',name:'Campur Selai Tiramisu Keju (Roti+Pisang)',price:31000,img:'https://source.unsplash.com/featured/?mix,tiramisu'},
+      {category:'Spesial Campur',name:'Campur Selai Cokelat Kacang (Roti+Pisang)',price:31000,img:'https://source.unsplash.com/featured/?mix,peanut'},
+      {category:'Spesial Campur',name:'Campur Selai Tiramisu Kacang (Roti+Pisang)',price:31000,img:'https://source.unsplash.com/featured/?mix,beans'},
+      {category:'Spesial Campur',name:'Campur Mises Kacang (Roti+Pisang)',price:29000,img:'https://source.unsplash.com/featured/?mix,peanut,butter'},
+    ];
+
+    // Group by category
+    const grouped = products.reduce((acc,p)=>{
+      acc[p.category] = acc[p.category] || [];
+      acc[p.category].push(p);
+      return acc;
+    }, {});
+
+    const container = document.getElementById('products');
+
+    Object.keys(grouped).forEach(cat=>{
+      const sec = document.createElement('section');
+      sec.innerHTML = `<h3 class="section-title">${cat}</h3><div class="shop-grid"></div>`;
+      const grid = sec.querySelector('.shop-grid');
+      grouped[cat].forEach(item=>{
+        const card = document.createElement('article');
+        card.className = 'card';
+        const img = document.createElement('img'); img.src = item.img; img.alt = item.name;
+        const title = document.createElement('div'); title.className='title'; title.textContent = item.name;
+        const meta = document.createElement('div'); meta.className='meta';
+        const tag = document.createElement('div'); tag.className='tag'; tag.textContent = cat;
+        const price = document.createElement('div'); price.className='price'; price.textContent = `Rp ${item.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,",")}`;
+        meta.appendChild(tag); meta.appendChild(price);
+        const actions = document.createElement('div'); actions.className='actions';
+        const waLink = document.createElement('a'); waLink.className='small-btn wa'; waLink.href = `https://wa.me/${shopPhone}?text=` + encodeURIComponent(`Halo Roti Tenong, saya mau pesan:\n- ${item.name} (Rp ${item.price})\nAlamat pengiriman:`);
+        waLink.target='_blank'; waLink.textContent='Pesan WA';
+        const gf = document.createElement('a'); gf.className='small-btn gofood'; gf.href = gofoodLink; gf.target='_blank'; gf.textContent='Order GoFood';
+        actions.appendChild(waLink); actions.appendChild(gf);
+
+        card.appendChild(img);
+        card.appendChild(title);
+        card.appendChild(meta);
+        card.appendChild(actions);
+        grid.appendChild(card);
+      });
+
+      container.appendChild(sec);
+    });
+  </script>
+</body>
+</html>
