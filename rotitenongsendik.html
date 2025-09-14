@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Roti & Pisang Tenong — Web Store</title>
+  <meta name="description" content="Roti Tenong & Pisang Tenong — Halte BRI Corporate University, Padang. Buka 17:00-23:00. Order via WhatsApp atau GoFood." />
+  <style>
+    :root{
+      --bg:#fff9f0; --primary:#ff6b6b; --accent:#ffd166; --muted:#6b6b6b; --card:#fff; --glass: rgba(255,255,255,0.7);
+      --shadow: 0 8px 24px rgba(0,0,0,0.08);
+      --radius:18px;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#fffefc 0%, #fff4e6 100%);color:#222}
+    header{display:flex;align-items:center;justify-content:space-between;padding:20px 28px}
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{width:72px;height:72px;border-radius:12px;background:linear-gradient(135deg,var(--primary),#ff9a9e);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:20px;box-shadow:var(--shadow)}
+    h1{margin:0;font-size:20px}
+    .tag{color:var(--muted);font-size:13px}
+
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:20px;padding:18px 28px}
+    .hero-card{background:var(--card);border-radius:20px;padding:22px;box-shadow:var(--shadow)}
+    .hero h2{margin:6px 0 10px;font-size:26px}
+    .hero p{margin:0;color:var(--muted)}
+    .store-info{display:flex;flex-direction:column;gap:8px}
+    .pill{background:var(--accent);padding:8px 12px;border-radius:12px;font-weight:600}
+
+    .products{padding:12px 28px 40px}
+    .section{margin-top:18px}
+    .section h3{margin:0 0 12px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+
+    .card{background:var(--card);border-radius:14px;padding:12px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px;overflow:hidden}
+    .thumb{width:100%;height:150px;border-radius:10px;object-fit:cover;background:#eee}
+    .meta{display:flex;justify-content:space-between;align-items:center}
+    .name{font-weight:700}
+    .price{font-weight:800;color:var(--primary)}
+    .variant{font-size:13px;color:var(--muted)}
+    .actions{display:flex;gap:8px}
+    .btn{flex:1;padding:8px 10px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
+    .btn-order{background:var(--primary);color:#fff}
+    .btn-gofood{background:#fff6e6;border:1px solid rgba(0,0,0,0.06)}
+
+    footer{padding:20px 28px;border-top:1px dashed rgba(0,0,0,0.06);display:flex;justify-content:space-between;align-items:center}
+    .contact{display:flex;gap:14px;align-items:center}
+    .small{font-size:13px;color:var(--muted)}
+
+    /* responsive */
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr;}
+      .hero-card{order:2}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo"><img class=img width="90" src="logo.png"></div>
+      <div>
+        <h1>Roti & Pisang Tenong</h1>
+        <div class="tag">Halte BRI Corporate University — Cupak Tangah, Padang</div>
+      </div>
+    </div>
+    <div class="store-info">
+      <div class="pill">Buka setiap hari 17:00 — 23:00</div>
+      <div style="display:flex;gap:8px;align-items:center">
+        <a href="https://wa.me/6282243421731?text=Halo%20Roti%20Tenong%2C%20saya%20ingin%20pesan:" target="_blank" class="btn btn-order" style="padding:10px 14px;">Chat WhatsApp</a>
+        <a href="https://gofood.link/a/AxvoFXS" target="_blank" class="btn btn-gofood" style="padding:10px 14px;">Order GoFood</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-card">
+      <h2>Rasakan manisnya Roti Tenong & Pisang Tenong</h2>
+      <p>Pilihan varian: Meses, Selai Cokelat, Tiramisu, Keju, Kacang, dan Campuran Spesial. Semua disajikan hangat, siap dinikmati setiap malam.</p>
+      <div style="margin-top:16px;display:flex;gap:12px;align-items:center">
+        <div style="display:flex;flex-direction:column">
+          <strong>Alamat</strong>
+          <span class="small">Halte BRI Corporate University, Cupak Tangah, Kec. Pauh, Kota Padang</span>
+        </div>
+        <div style="display:flex;flex-direction:column">
+          <strong>WA</strong>
+          <span class="small">0822-4342-1731</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-card" style="display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:center;text-align:center">
+      <img class=img width="100" src="grb.jpeg">
+      <div style="font-weight:700">Nikmati rasa spesial setiap hari!</div>
+    </div>
+  </section>
+
+  <main class="products">
+    <!-- Roti Tenong -->
+    <div class="section">
+      <h3>Roti Tenong</h3>
+      <div class="grid">
+        <!-- Roti Tenong meses cokelat keju Rp 19.500 -->
+        <div class="card">
+          <img class=img width="205" src="roti.jpeg">
+          <div class="meta"><div class="name">Roti Tenong</div>
+	<div class="price">Rp 19.500</div></div>
+          <div class="variant">Meses Cokelat Keju</div>
+          <div class="actions">
+            <a class="btn btn-order" href="https://wa.me/6282243421731?text=Saya%20pesan%20Roti%20Tenong%20-%20Meses%20Cokelat%20Keju%20(1)%20">Pesan via WA</a>
+            <a class="btn btn-gofood" href="https://gofood.link/a/AxvoFXS" target="_blank">GoFood</a>
+          </div>
+        </div>
+
+        <!-- Roti Tenong selai cokelat keju Rp 22.500 -->
+        <div class="card">
+          <img class=img width="205" src="roti.jpeg">
+          <div class="meta"><div class="name">Roti Tenong</div><div class="price">Rp 22.500</div></div>
+          <div class="variant">Selai Cokelat Keju</div>
+          <div class="actions">
+            <a class="btn btn-order" href="https://wa.me/6282243421731?text=Saya%20pesan%20Roti%20Tenong%20-%20Selai%20Cokelat%20Keju%20(1)%20">Pesan via WA</a>
+            <a class="btn btn-gofood" href="https://gofood.link/a/AxvoFXS" target="_blank">GoFood</a>
+          </div>
+        </div>
+
+        <!-- Roti Tenong selai tiramisu keju Rp 22.500 -->
+        <div class="card">
+          <img class=img width="205" src="roti.jpeg">
+          <div class="meta"><div class="name">Roti Tenong</div><div class="price">Rp 22.500</div></div>
+          <div class="variant">Selai Tiramisu Keju</div>
+          <div class="actions">
+            <a class="btn btn-order" href="https://wa.me/6282243421731?text=Saya%20pesan%20Roti%20Tenong%20-%20Selai%20Tiramisu%20Keju%20(1)%20">Pesan via WA</a>
+            <a class="btn btn-gofood" href="https://gofood.link/a/AxvoFXS" target="_blank">GoFood</a>
+          </div>
+        </div>
+
+        <!-- Roti Tenong selai tiramisu kacang Rp 22.500 -->
+        <div class="card">
+          <img class=img width="205" src="roti.jpeg">
+          <div class="meta"><div class="name">Roti Tenong</div><div class="price">Rp 22.500</div></div>
+          <div class="variant">Selai Tiramisu Kacang</div>
+          <div class="actions">
+            <a class="btn btn-order" href="https://wa.me/6282243421731?text=Saya%20pesan%20Roti%20Tenong%20-%20Selai%20Tiramisu%20Kacang%20(1)%20">Pesan via WA</a>
+            <a class="btn btn-gofood" href="https://gofood.link/a/AxvoFXS" target="_blank">GoFood</a>
+          </div>
+        </div>
+
+        <!-- Roti Tenong mises kacang Rp 19.500 (note: 'mises' as 'meses') -->
+        <div class="card">
+          <img class=img width="205" src="roti.jpeg">
+          <div class="meta"><div class="name">Roti Tenong</div><div class="price">Rp 19.500</div></div>
+          <div class="variant">Mises Kacang</div>
+          <div class="actions">
+            <a class="btn btn-order" href="https://wa.me/6282243421731?text=Saya%20pesan%20Roti%20Tenong%20-%20Mises%20Kacang%20(1)%20">Pesan via WA</a>
+            <a class="btn btn-gofood" href="https://gofood.link/a/AxvoFXS" target="_blank">GoFood</a>
+          </div>
+        </div>
+
+        <!-- Roti Tenong selai cokelat kacang Rp 22.500 -->
+        <div class="card">
+         <img class=img width="205" src="roti.jpeg">
+          <div class="meta"><div class="name">Roti Tenong</div><div class="price">Rp 22.500</div></div>
+          <div class="variant">Selai Cokelat Kacang</div>
+          <div class="actions">
+            <a class="btn btn-order" href="https://wa.me/6282243421731?text=Saya%20pesan%20Roti%20Tenong%20-%20Selai%20Cokelat%20Kacang%20(1)%20">Pesan via WA</a>
+            <a class="btn btn-gofood" href="https://gofood.link/a/AxvoFXS" target="_blank">GoFood</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Pisang Tenong -->
+    <div class="section">
+      <h3>Pisang Tenong</h3>
+      <div class="grid">
+        <!-- list variants similarly -->
+        <div class="card">
+          <img class=img width="205" src="pisang1.jpeg">
+          <div class="meta"><div class="name">Pisang Tenong</div><div class="price">Rp 19.500</div></div>
+          <div class="variant">Meses Keju</div>
+          <div class="actions">
+            <a class="btn btn-order" href="https://wa.me/6282243421731?text=Saya%20pesan%20Pisang%20Tenong%20-%20Meses%20Keju%20(1)%20">Pesan via WA</a>
+            <a class="btn btn-gofood" href="https://gofood.link/a/AxvoFXS" target="_blank">GoFood</a>
+          </div>
+        </div>
+
+        <div class="card">
+        <img class=img width="205" src="pisang1.jpeg">
+          <div class="meta"><div class="name">Pisang Tenong</div><div class="price">Rp 22.500</div></div>
+          <div class="variant">Selai Cokelat Keju</div>
+          <div class="actions">
+            <a class="btn btn-order" href="https://wa.me/6282243421731?text=Saya%20pesan%20Pisang%20Tenong%20-%20Selai%20Cokelat%20Keju%20(1)%20">Pesan via WA</a>
+            <a class="btn btn-gofood" href="https://gofood.link/a/AxvoFXS" target="_blank">GoFood</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img class=img width="205" src="pisang1.jpeg">
+          <div class="meta"><div class="name">Pisang Tenong</div><div class="price">Rp 22.500</div></div>
+          <div class="variant">Selai Tiramisu Keju</div>
+          <div class="actions">
+            <a class="btn btn-order" href="https://wa.me/6282243421731?text=Saya%20pesan%20Pisang%20Tenong%20-%20Selai%20Tiramisu%20Keju%20(1)%20">Pesan via WA</a>
+            <a class="btn btn-gofood" href="https://gofood.link/a/AxvoFXS" target="_blank">GoFood</a>
+          </div>
+        </div>
+
+        <div class="card">
+         <img class=img width="205" src="pisang1.jpeg">
+          <div class="meta"><div class="name">Pisang Tenong</div><div class="price">Rp 22.500</div></div>
+          <div class="variant">Selai Tiramisu Kacang</div>
+          <div class="actions">
+            <a class="btn btn-order" href="https://wa.me/6282243421731?text=Saya%20pesan%20Pisang%20Tenong%20-%20Selai%20Tiramisu%20Kacang%20(1)%20">Pesan via WA</a>
+            <a class="btn btn-gofood" href="https://gofood.link/a/AxvoFXS" target="_blank">GoFood</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img class=img width="205" src="pisang1.jpeg">
+          <div class="meta"><div class="name">Pisang Tenong</div><div class="price">Rp 19.500</div></div>
+          <div class="variant">Mises Kacang</div>
+          <div class="actions">
+            <a class="btn btn-order" href="https://wa.me/6282243421731?text=Saya%20pesan%20Pisang%20Tenong%20-%20Mises%20Kacang%20(1)%20">Pesan via WA</a>
+            <a class="btn btn-gofood" href="https://gofood.link/a/AxvoFXS" target="_blank">GoFood</a>
+          </div>
+        </div>
+
+        <div class="card">
+        <img class=img width="205" src="pisang1.jpeg">
+          <div class="meta"><div class="name">Pisang Tenong</div><div class="price">Rp 22.000</div></div>
+          <div class="variant">Selai Cokelat Kacang</div>
+          <div class="actions">
+            <a class="btn btn-order" href="https://wa.me/6282243421731?text=Saya%20pesan%20Pisang%20Tenong%20-%20Selai%20Cokelat%20Kacang%20(1)%20">Pesan via WA</a>
+            <a class="btn btn-gofood" href="https://gofood.link/a/AxvoFXS" target="_blank">GoFood</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Pisang Crispy -->
+    <div class="section">
+      <h3>Pisang Crispy</h3>
+      <div class="grid">
+        <div class="card">
+          <img class=img width="205" src="pisang.jpg">
+          <div class="meta"><div class="name">Pisang Crispy</div><div class="price">Rp 23.500</div></div>
+          <div class="variant">Selai Cokelat Keju</div>
+          <div class="actions">
+            <a class="btn btn-order" href="https://wa.me/6282243421731?text=Saya%20pesan%20Pisang%20Crispy%20-%20Selai%20Cokelat%20Keju%20(1)%20">Pesan via WA</a>
+            <a class="btn btn-gofood" href="https://gofood.link/a/AxvoFXS" target="_blank">GoFood</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img class=img width="205" src="pisang.jpg">
+          <div class="meta"><div class="name">Pisang Crispy</div><div class="price">Rp 23.000</div></div>
+          <div class="variant">Selai Tiramisu Keju</div>
+          <div class="actions">
+            <a class="btn btn-order" href="https://wa.me/6282243421731?text=Saya%20pesan%20Pisang%20Crispy%20-%20Selai%20Tiramisu%20Keju%20(1)%20">Pesan via WA</a>
+            <a class="btn btn-gofood" href="https://gofood.link/a/AxvoFXS" target="_blank">GoFood</a>
+          </div>
+        </div>
+
+        <div class="card">
+         <img class=img width="205" src="pisang.jpg">
+          <div class="meta"><div class="name">Pisang Crispy</div><div class="price">Rp 20.500</div></div>
+          <div class="variant">Mises Keju</div>
+          <div class="actions">
+            <a class="btn btn-order" href="https://wa.me/6282243421731?text=Saya%20pesan%20Pisang%20Crispy%20-%20Mises%20Keju%20(1)%20">Pesan via WA</a>
+            <a class="btn btn-gofood" href="https://gofood.link/a/AxvoFXS" target="_blank">GoFood</a>
+          </div>
+        </div>
+
+        <div class="card">
+         <img class=img width="205" src="pisang.jpg">
+          <div class="meta"><div class="name">Pisang Crispy</div><div class="price">Rp 23.500</div></div>
+          <div class="variant">Selai Tiramisu Kacang</div>
+          <div class="actions">
+            <a class="btn btn-order" href="https://wa.me/6282243421731?text=Saya%20pesan%20Pisang%20Crispy%20-%20Selai%20Tiramisu%20Kacang%20(1)%20">Pesan via WA</a>
+            <a class="btn btn-gofood" href="https://gofood.link/a/AxvoFXS" target="_blank">GoFood</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img class=img width="205" src="pisang.jpg">
+          <div class="meta"><div class="name">Pisang Crispy</div><div class="price">Rp 23.500</div></div>
+          <div class="variant">Selai Cokelat Kacang</div>
+          <div class="actions">
+            <a class="btn btn-order" href="https://wa.me/6282243421731?text=Saya%20pesan%20Pisang%20Crispy%20-%20Selai%20Cokelat%20Kacang%20(1)%20">Pesan via WA</a>
+            <a class="btn btn-gofood" href="https://gofood.link/a/AxvoFXS" target="_blank">GoFood</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img class=img width="205" src="pisang.jpg">
+          <div class="meta"><div class="name">Pisang Crispy</div><div class="price">Rp 20.500</div></div>
+          <div class="variant">Mises Kacang</div>
+          <div class="actions">
+            <a class="btn btn-order" href="https://wa.me/6282243421731?text=Saya%20pesan%20Pisang%20Crispy%20-%20Mises%20Kacang%20(1)%20">Pesan via WA</a>
+            <a class="btn btn-gofood" href="https://gofood.link/a/AxvoFXS" target="_blank">GoFood</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Spesial Campur -->
+    <div class="section">
+      <h3>Spesial Campur (Roti + Pisang)</h3>
+      <div class="grid">
+        <div class="card">
+          <img class=img width="205" src="Campur.jpg">
+          <div class="meta"><div class="name">Campur Roti & Pisang Tenong</div><div class="price">Rp 29.000</div></div>
+          <div class="variant">Mises Keju</div>
+          <div class="actions">
+            <a class="btn btn-order" href="https://wa.me/6282243421731?text=Saya%20pesan%20Campur%20-%20Mises%20Keju%20(1)%20">Pesan via WA</a>
+            <a class="btn btn-gofood" href="https://gofood.link/a/AxvoFXS" target="_blank">GoFood</a>
+          </div>
+        </div>
+
+        <div class="card">
+         <img class=img width="205" src="Campur.jpg">
+          <div class="meta"><div class="name">Campur Roti & Pisang Tenong</div><div class="price">Rp 31.000</div></div>
+          <div class="variant">Selai Cokelat Keju</div>
+          <div class="actions">
+            <a class="btn btn-order" href="https://wa.me/6282243421731?text=Saya%20pesan%20Campur%20-%20Selai%20Cokelat%20Keju%20(1)%20">Pesan via WA</a>
+            <a class="btn btn-gofood" href="https://gofood.link/a/AxvoFXS" target="_blank">GoFood</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img class=img width="205" src="Campur.jpg">
+          <div class="meta"><div class="name">Campur Roti & Pisang Tenong</div><div class="price">Rp 31.000</div></div>
+          <div class="variant">Selai Tiramisu Keju</div>
+          <div class="actions">
+            <a class="btn btn-order" href="https://wa.me/6282243421731?text=Saya%20pesan%20Campur%20-%20Selai%20Tiramisu%20Keju%20(1)%20">Pesan via WA</a>
+            <a class="btn btn-gofood" href="https://gofood.link/a/AxvoFXS" target="_blank">GoFood</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img class=img width="205" src="Campur.jpg">     
+     <div class="meta"><div class="name">Campur Roti & Pisang Tenong</div><div class="price">Rp 31.000</div></div>
+          <div class="variant">Selai Cokelat Kacang</div>
+          <div class="actions">
+            <a class="btn btn-order" href="https://wa.me/6282243421731?text=Saya%20pesan%20Campur%20-%20Selai%20Cokelat%20Kacang%20(1)%20">Pesan via WA</a>
+            <a class="btn btn-gofood" href="https://gofood.link/a/AxvoFXS" target="_blank">GoFood</a>
+          </div>
+        </div>
+
+        <div class="card">
+         <img class=img width="205" src="Campur.jpg">
+          <div class="meta"><div class="name">Campur Roti & Pisang Tenong</div><div class="price">Rp 31.000</div></div>
+          <div class="variant">Selai Tiramisu Kacang</div>
+          <div class="actions">
+            <a class="btn btn-order" href="https://wa.me/6282243421731?text=Saya%20pesan%20Campur%20-%20Selai%20Tiramisu%20Kacang%20(1)%20">Pesan via WA</a>
+            <a class="btn btn-gofood" href="https://gofood.link/a/AxvoFXS" target="_blank">GoFood</a>
+          </div>
+        </div>
+
+        <div class="card">
+         <img class=img width="205" src="Campur.jpg">
+          <div class="meta"><div class="name">Campur Roti & Pisang Tenong</div><div class="price">Rp 29.000</div></div>
+          <div class="variant">Mises Kacang</div>
+          <div class="actions">
+            <a class="btn btn-order" href="https://wa.me/6282243421731?text=Saya%20pesan%20Campur%20-%20Mises%20Kacang%20(1)%20">Pesan via WA</a>
+            <a class="btn btn-gofood" href="https://gofood.link/a/AxvoFXS" target="_blank">GoFood</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+ <footer>
+      <div class="profile">
+        <h3 style="margin:0">Tentang Roti Tenong</h3>
+        <p style="margin:8px 0;color:var(--muted)">Alamat: Halte BRI Corporate University, Cupak Tangah, Kecamatan Pauh, Kota Padang.<br>Buka setiap hari 17:00–23:00. Kontak WhatsApp: <strong>082243421731</strong></p>
+        <p style="margin:8px 0">Order online via <a href="https://gofood.link/a/AxvoFXS" target="_blank">GoFood</a> atau klik tombol WhatsApp untuk pesan langsung.</p>
+      </div>
+      <div class="map">
+        <iframe
+          width="100%" height="100%" frameborder="0" style="border:0"
+          src="https://www.google.com/maps?q=Halte%20BRI%20Corporate%20University%2C%20Cupak%20Tangah%2C%20Kecamatan%20Pauh%2C%20Kota%20Padang&output=embed" allowfullscreen>
+        </iframe>
+      </div>
+    </footer>
+
+</body>
+</html>
